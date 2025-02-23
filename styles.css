@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    background-color: #e8e8e8;
+    animation: allowscroll 2s steps(2, jump-none) forwards;
+}
+
+@keyframes allowscroll{
+    2%,99%{overflow-y:hidden;}
+    100%{ overflow-y:scroll}
+}
+
+.intro{
+    background:url('Images/smile_anim/spritesheet.gif') 0 0px;
+    opacity:0;
+    position:absolute;
+    width: clamp(128px, 256px, 50vw);
+    height: clamp(128px, 256px, 50vh);
+    top: calc(50% - 128px);
+    left: calc(50% - 128px);
+    align-items: center;
+    animation: intro-cinematic-movement 1.5s ease-in-out forwards, 
+    animation_sprite 1.5s steps(11, jump-none) forwards;
+}
+
+.page_container{
+    display:flex;
+    position:absolute;
+    margin-left:16%;
+    margin-right:27%;
+    flex-direction:column;
+    opacity:0;
+    animation: container_anim 2s ease-in-out forwards;
+}
+
+.page{
+    margin-top:1%;
+    width:70vw;
+    height:100vh;
+    display:flex;
+    flex-direction:row;
+    font-family: Chivo;
+}
+
+.left_side{
+    flex-grow: 1.25;
+    border: 2px solid black;
+    width:50%;
+    padding: 2%;
+    background-color: white;
+}
+
+.left_side button{
+    font-family: Chivo;
+    font-size: clamp(1rem, 2.15vw, 2.35rem);
+    margin-left:20%;
+    height:calc(10% + clamp(1rem, 2.15vw, 2.35rem));
+    width:50%;
+
+    scale:1;
+    background-color:beige;
+    border: 2px solid black;
+    border-radius: 4px;
+    transition-duration:0.5s;
+    transition-timing-function: cubic-beizer(0.16,0.72,0.39,0.8);
+
+    margin-top:5%;
+}
+
+.left_side button:hover{
+    scale:1.1;
+    background-color:bisque;
+}
+
+.right_side{
+    width:(240px, 45%, 50%);
+    flex-grow:1.65;
+    border: 2px solid black;
+    padding-left:2%;
+    padding-right: 2%;
+    background-color:aliceblue;
+}
+
+.page h1{
+    font-size: clamp(2rem, 2.75vw, 2.75rem);
+    margin:20px;
+}
+
+.page h2{
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+    margin:20px;
+}
+
+.page p{
+    font-size: clamp(1.15rem, 1.85vw, 1.9rem);
+    margin:20px;
+}
+
+#marcus_pfp{
+    margin-top:11%;
+    content:url(Images/Marcus/Marcus.png);
+    width:600px;
+    height:850px;
+}
+
+@media(max-width:1365px){
+    #marcus_pfp{
+        width: 380px; 
+        height: 600px;
+    }
+}
+
+@media (max-width:1100px){
+    .page_container{
+        margin-left:7%;
+    }
+}
+
+
+@media(max-width:1000px){
+    #marcus_pfp{
+        width: 280px; 
+        height: 600px;
+    }
+}
+
+@media (max-width:850px){
+    .page_container{
+        margin-left:5%;
+    }
+}
+
+@media (max-width:720px){
+    .page_container{
+        margin-left:3%;
+    }
+}
+
+@media (max-width:700px){
+    .page_container{
+        margin-left:2%;
+    }
+}
+
+@media (max-width:670px){
+    .page_container{
+        margin-left:0.5%;
+    }
+
+    .right_side{
+        max-width:70%;
+    }
+
+    #marcus_pfp{
+        margin-top:50%;
+        width:220px;
+    }
+}
+
+@keyframes container_anim{
+    0%,80%{
+        opacity:0
+    }
+
+    100%{
+        opacity:1;
+    }
+}
+
+@keyframes intro-cinematic-movement{
+    0%,100%{
+        opacity:0
+    }
+    10%{
+        opacity:1;
+    }
+
+    47%{
+        scale:2;
+    }
+
+
+    75%{
+        scale:1.5;
+    }
+
+    90%{
+        top:calc(50% - 128px);
+        scale:1.5;
+        opacity:1;
+    }
+
+    99%{
+        display:none;
+        top:-10%;
+    }
+}
+
+@keyframes animation_sprite{
+    75%,76.49%{
+        background:url('Images/smile_anim/spritesheet.gif') 0 0px;
+    }
+
+    76.5%,77.9%{
+        background:url('Images/smile_anim/spritesheet.gif') -256px 0px;
+    }
+
+    78%,79.49%{
+        background:url('Images/smile_anim/spritesheet.gif') -512px 0px;
+    }
+
+    79.5%,80.9%{
+        background:url('Images/smile_anim/spritesheet.gif') -768px 0px;
+    }
+
+    81%, 82.49%{
+        background:url('Images/smile_anim/spritesheet.gif') -1024px 0px;
+    }
+
+    82.5%,83.9%{
+        background:url('Images/smile_anim/spritesheet.gif') -1280px 0px;
+    }
+
+    84%,85.49%{
+        background:url('Images/smile_anim/spritesheet.gif') -1536px 0px;
+    }
+
+    85.5%,86.99%{
+        background:url('Images/smile_anim/spritesheet.gif') -1792px 0px;
+    }
+
+    87%,88.49%{
+        background:url('Images/smile_anim/spritesheet.gif') -2048px 0px;
+    }
+
+    88.5%,89.99%{
+        background:url('Images/smile_anim/spritesheet.gif') -2304px 0px;
+    }
+
+    90%,100%{
+        background:url('Images/smile_anim/spritesheet.gif') -2560px 0px;
+    }
+}
