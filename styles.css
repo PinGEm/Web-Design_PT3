@@ -97,7 +97,7 @@ body{
 }
 
 #marcus_pfp{
-    margin-top:11%;
+    margin-top: 11%;
     content:url(Images/Marcus/Marcus.png);
     width:600px;
     height:850px;
@@ -152,7 +152,7 @@ body{
     }
 
     #marcus_pfp{
-        margin-top:50%;
+        margin-top:25%;
         width:220px;
     }
 }
